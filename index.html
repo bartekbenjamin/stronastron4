@@ -1,0 +1,222 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>STRONA</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+.strona {
+    display: grid;
+    grid-template-columns: 1fr 2.4fr 0.85fr;
+    grid-template-rows: 65px 1fr 45px;
+    min-height: 100vh;
+}
+
+header, footer {
+    grid-column: 1 / 4;
+    text-align: center;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+nav, main, aside {
+    border: 2px solid black;
+    padding: 20px;
+}
+
+a {
+    display: block;
+    margin: 20px 0;
+    color: black;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #c0392b;
+    padding-left: 8px;
+}
+
+img {
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #555;
+    display: block;
+    margin: 20px auto;
+}
+
+header {
+    border-bottom: 3px solid black;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main, nav, aside {
+    line-height: 1.6;
+}
+
+/* STRONA GŁÓWNA */
+body.glowna {
+    background: #e8dfce;
+}
+
+body.glowna header,
+body.glowna nav,
+body.glowna main,
+body.glowna aside,
+body.glowna footer {
+    background: #e8dfce;
+}
+
+/* HALLOWEEN */
+body.halloween {
+    background: #f4a340;
+}
+
+body.halloween header,
+body.halloween nav,
+body.halloween main,
+body.halloween aside {
+    background: #f4a340;
+}
+
+body.halloween footer {
+    background: #693b24;
+    color: white;
+}
+
+/* 11 LISTOPADA */
+body.niepodleglosc {
+    background: linear-gradient(to bottom, white 50%, #dc143c 50%);
+    background-attachment: fixed;
+}
+
+body.niepodleglosc header,
+body.niepodleglosc nav,
+body.niepodleglosc main,
+body.niepodleglosc aside,
+body.niepodleglosc footer {
+    background: transparent;
+}
+
+/* WSZYSTKICH ŚWIĘTYCH */
+body.swietych {
+    background: #a6a6a6;
+}
+
+body.swietych header,
+body.swietych nav,
+body.swietych main,
+body.swietych aside {
+    background: #a6a6a6;
+}
+
+body.swietych footer {
+    background: #454545;
+    color: white;
+}
+
+</style>
+</head>
+
+<body class="glowna">
+
+<div class="strona">
+
+<header>
+    <h2>OBCHODY WAŻNYCH ŚWIĄT W POLSCE</h2>
+</header>
+
+<nav>
+    <h3>Nawigacja po stronach</h3>
+
+    <a href="#" onclick="pokaz('glowna')">Strona główna</a>
+    <a href="#" onclick="pokaz('halloween')">Halloween</a>
+    <a href="#" onclick="pokaz('niepodleglosc')">Narodowe Święto Niepodległości</a>
+    <a href="#" onclick="pokaz('swietych')">Wszystkich Świętych</a>
+</nav>
+
+<main id="tresc">
+    <h2>W POLSCE W JESIEŃ OBCHODZIMY WAŻNE ŚWIĘTA</h2>
+    <p>Święto Niepodległości (11 listopada) upamiętnia odzyskanie przez Polskę wolności w 1918 roku. Wszystkich Świętych (1 listopada) to dzień pamięci o zmarłych i odwiedzania cmentarzy. Halloween (31 października) to zwyczaj związany z przebieraniem się, zabawą i zbieraniem słodyczy. Wszystkie święta mają inne tradycje i znaczenie.</p>
+</main>
+
+<aside id="linki">
+    <h3>Ciekawostki</h3>
+    <p>11 listopada: Polska odzyskała niepodległość w 1918 roku, a jednym z symboli tego dnia jest biało-czerwona flaga.</p>
+    <p>Wszystkich Świętych: Zwyczaj zapalania zniczy na grobach jest w Polsce bardzo popularny i symbolizuje pamięć o zmarłych.</p>
+    <p>Halloween: Nazwa pochodzi od angielskiego „All Hallows’ Eve”, czyli wigilii Wszystkich Świętych. Dawniej wydrążano rzepy, a nie dynie!</p>
+</aside>
+
+<footer>
+    Bartosz Strzelecki     ZST TRZCIANKA +48 670 997 430
+</footer>
+
+</div>
+
+<script>
+function pokaz(strona) {
+
+document.body.className = strona;
+
+if (strona == "glowna") {
+document.getElementById("tresc").innerHTML =
+"<h2>W POLSCE W JESIEŃ OBCHODZIMY WAŻNE ŚWIĘTA</h2><p>Święto Niepodległości (11 listopada) upamiętnia odzyskanie przez Polskę wolności w 1918 roku. Wszystkich Świętych (1 listopada) to dzień pamięci o zmarłych i odwiedzania cmentarzy. Halloween (31 października) to zwyczaj związany z przebieraniem się, zabawą i zbieraniem słodyczy. Wszystkie święta mają inne tradycje i znaczenie.</p>";
+
+document.getElementById("linki").innerHTML =
+"<h3>Ciekawostki</h3>" +
+"<p>11 listopada: Polska odzyskała niepodległość w 1918 roku, a jednym z symboli tego dnia jest biało-czerwona flaga.</p>" +
+"<p>Wszystkich Świętych: Zwyczaj zapalania zniczy na grobach jest w Polsce bardzo popularny i symbolizuje pamięć o zmarłych.</p>" +
+"<p>Halloween: Nazwa pochodzi od angielskiego „All Hallows’ Eve”, czyli wigilii Wszystkich Świętych. Dawniej wydrążano rzepy, a nie dynie!</p>";
+}
+
+if (strona == "halloween") {
+document.getElementById("tresc").innerHTML =
+"<h2>Halloween</h2><p>Halloween – zwyczaj związany z maskaradą, obchodzony w licznych krajach 31 października wieczorem. Odniesienia do Halloween są widoczne w kulturze popularnej, głównie amerykańskiej.Halloween jest obchodzony najhuczniej w krajach anglosaskich, takich jak Stany Zjednoczone, Kanada, Irlandia, Australia i Wielka Brytania. Mimo że dzień nie jest świętem urzędowym, cieszy się największą popularnością po świętach Bożego Narodzenia.</p><img src='halloween.jpg'>";
+
+document.getElementById("linki").innerHTML =
+"<h3>Przydatne linki</h3>" +
+"<a href='https://slodycze-24.pl/' target='_blank'>Kup słodycze</a>" +
+"<a href='https://www.partybox.pl/dekoracje-na-halloween,2192' target='_blank'>Dekoracje Halloween</a>" +
+"<a href='https://www.partybox.pl/stroje-na-halloween,11820' target='_blank'>Stroje Halloween</a>";
+}
+
+if (strona == "niepodleglosc") {
+document.getElementById("tresc").innerHTML =
+"<h2>Narodowe Święto Niepodległości</h2><p>Narodowe Święto Niepodległości – polskie święto państwowe, obchodzone corocznie 11 listopada dla upamiętnienia odzyskania niepodległości przez Polskę w 1918 r., po 123 latach zaborów (1795–1918), ustanowione ustawą z dnia 23 kwietnia 1937 r. , zniesione 22 lipca 1945 ustawą Krajowej Rady Narodowej i przywrócone w okresie transformacji systemowej, ustawą z dnia 15 lutego 1989 r. Jest dniem wolnym od pracy.</p><img src='11listopada.jpg'>";
+
+document.getElementById("linki").innerHTML =
+"<h3>Przydatne linki</h3>" +
+"<a href='https://pl.wikipedia.org/wiki/Historia_Polski' target='_blank'>Historia Polski</a>" +
+"<a href='https://pl.wikipedia.org/wiki/Narodowe_%C5%9Awi%C4%99to_Niepodleg%C5%82o%C5%9Bci' target='_blank'>Obchody święta</a>" +
+"<a href='https://pl.wikipedia.org/wiki/Odzyskanie_niepodleg%C5%82o%C5%9Bci_przez_Polsk%C4%99_w_1918_roku' target='_blank'>Ważne wydarzenia</a>";
+}
+
+if (strona == "swietych") {
+document.getElementById("tresc").innerHTML =
+"<h2>Wszystkich Świętych</h2><p>Uroczystość Wszystkich Świętych (łac. Sollemnitas Omnium Sanctorum) – w Kościele katolickim uroczystość ku czci wszystkich chrześcijan, którzy osiągnęli stan zbawienia i przebywają w niebie, obchodzona corocznie 1 listopada, treściowo połączona z następującym po niej obchodem liturgicznym Dnia Zadusznego. W doktrynie Kościoła katolickiego jest wyrazem wiary w obcowanie świętych i powszechne powołanie do świętości.</p><img src='wszystkichswietych.jpg'>";
+
+document.getElementById("linki").innerHTML =
+"<h3>Przydatne linki</h3>" +
+"<a href='https://sklep.zniczebartek.pl/' target='_blank'>Znicze</a>" +
+"<a href='https://kwiatynacmentarz.pl/' target='_blank'>Kwiaty na cmentarz</a>" +
+"<a href='https://pl.wikipedia.org/wiki/Uroczysto%C5%9B%C4%87_Wszystkich_%C5%9Awi%C4%99tych' target='_blank'>Tradycje świąteczne</a>";
+}
+
+}
+</script>
+
+</body>
+</html>
+    
